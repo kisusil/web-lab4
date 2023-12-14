@@ -1,11 +1,11 @@
 function addMouseEventListeners(stroke, fill, elIndex) {
     fill.addEventListener("mouseenter", (e) => {
-        if (window.ELEMENTS_STATE[elIndex] !== 0) return;
-
-        stroke.style.opacity = "1.0";
-        fill.style.fillOpacity = "0.2";
-        fill.style.opacity = "1.0";
-        fill.style.cursor = "pointer";
+        if (window.ELEMENTS_STATE[elIndex] === 0) {
+            stroke.style.opacity = "1.0";
+            fill.style.fillOpacity = "0.2";
+            fill.style.opacity = "1.0";
+            fill.style.cursor = "pointer";
+        }
 
         let canvas = document.getElementById("canvas");
         let tooltip = document.getElementById("tooltip-" + elIndex);
@@ -24,12 +24,12 @@ function addMouseEventListeners(stroke, fill, elIndex) {
         }
     });
     fill.addEventListener("mouseleave", (e) => {
-        if (window.ELEMENTS_STATE[elIndex] !== 0) return;
-
-        stroke.style.opacity = "0";
-        fill.style.fillOpacity = "0";
-        fill.style.opacity = "0";
-        fill.style.cursor = "auto";
+        if (window.ELEMENTS_STATE[elIndex] === 0) {
+            stroke.style.opacity = "0";
+            fill.style.fillOpacity = "0";
+            fill.style.opacity = "0";
+            fill.style.cursor = "auto";
+        }
 
         let canvas = document.getElementById("canvas");
         let tooltip = document.getElementById("tooltip-" + elIndex);
@@ -71,17 +71,17 @@ window.onload = () => {
         "Книжки"
     ]
     window.ELEMENTS_TEXTS = [
-        "Забота",
+        "Защита ваших ног от бабайки",
         "Защита пола от колёсиков",
         "Забота о вашей спине",
         "Защита ваших вещей от пыли",
-        "Лучший друг студента",
+        "Шумное ведро с болтами",
         "Гг Истребителя демонов",
         "Злодей Истребителя демонов",
         "Друг гг Истребителя демонов",
         "Для ваших сладких сновидений",
-        "Ваза",
-        "Мусорное ведро",
+        "Для женского счастья",
+        "Для скомканных бумажек",
         "Для ценителей бумаги"
     ]
 
